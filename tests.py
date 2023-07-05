@@ -1,2 +1,3 @@
-a = "arroz"
-print(len(a))
+a = ["a", "b"]
+a.remove("a")
+print(a)
