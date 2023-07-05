@@ -11,7 +11,8 @@ def isValid(s):
     close_square_brackets = False
     close_curly_brackets = False
     expects_closing = []
-
+    if len(s) % 2 != 0:
+        return False
     for character in s:
         # The openings
         if character == "(":
@@ -35,19 +36,25 @@ def isValid(s):
         elif character == "]":
             if not open_square_brackets:
                 return False
-            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("square brackets"):
+            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("square brackets") and s.index(")") > s.index("["):
                 return False
-            if close_curly_brackets and expects_closing.index("curly brackets") < expects_closing.index("square brackets"):
+            if close_curly_brackets and expects_closing.index("curly brackets") < expects_closing.index("square brackets") and s.index("}") > s.index("["):
                 return False
             close_square_brackets = True
         elif character == "}":
             if not open_curly_brackets:
                 return False
-            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("curly brackets"):
+            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("curly brackets") and s.index(")") > s.index("{"):
                 return False
-            if close_square_brackets and expects_closing.index("square brackets") < expects_closing.index("curly brackets"):
+            if close_square_brackets and expects_closing.index("square brackets") < expects_closing.index("curly brackets") and s.index("]") > s.index("{"):
                 return False
             close_curly_brackets = True
+    if open_parenthesis and not close_parenthesis:
+        return False
+    if open_square_brackets and not close_square_brackets:
+        return False
+    if open_curly_brackets and not close_curly_brackets:
+        return False
     return True
 
 
@@ -57,6 +64,7 @@ print(isValid("(]"), "-- should be FALSE")     # Should print "false"
 print(isValid("([)]"), "-- should be FALSE")    # Should print "false"
 print(isValid("{[]}"), "-- should be TRUE")    # Should print "true"
 print(isValid("[()]"), "-- should be TRUE")    # Should print "true"
+print(isValid("(("), "-- should be False")
 
 
 # Pensei em uma solução alternativa, para cada ( [ ou {, verifique se entre a abertura e
