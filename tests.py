@@ -18,8 +18,11 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
-                            local_open_square = local_close_square = local_open_curly = local_close_curly = 0
-                            break
+                            if local_open_square == local_close_square and local_close_curly == local_close_curly:
+                                local_open_square = local_close_square = local_open_curly = local_close_curly = 0
+                                break
+                            else:
+                                continue
                     if s[j] == "[":
                         local_open_square += 1
                     if s[j] == "{":
@@ -34,8 +37,6 @@ class Solution(object):
                     return False
                 if local_open_curly != local_close_curly:
                     return False
-                else:
-                    local_open_square = local_close_square = local_open_curly = local_close_curly = 0
             elif s[i] == "[":
                 open_square += 1
                 local_open_parenthesis = 0
@@ -47,8 +48,11 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
-                            local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
-                            break
+                            if local_open_parenthesis == local_close_parenthesis and local_open_curly == local_close_curly:
+                                local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
+                                break
+                            else:
+                                continue
                     if s[j] == "(":
                         local_open_parenthesis += 1
                     if s[j] == "{":
@@ -63,8 +67,6 @@ class Solution(object):
                     return False
                 if local_open_curly != local_close_curly:
                     return False
-                else:
-                    local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
             elif s[i] == "{":
                 open_curly += 1
                 local_open_parenthesis = 0
@@ -76,8 +78,11 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
-                            local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
-                            break
+                            if local_open_parenthesis == local_close_parenthesis and local_open_square == local_close_square:
+                                local_open_parenthesis = local_close_parenthesis = local_open_square = local_close_square = 0
+                                break
+                            else:
+                                continue
                     if s[j] == "(":
                         local_open_parenthesis += 1
                     if s[j] == "[":
@@ -92,8 +97,6 @@ class Solution(object):
                     return False
                 if local_open_square != local_close_square:
                     return False
-                else:
-                    local_open_parenthesis = local_close_parenthesis = local_open_square = local_close_square = 0
             elif s[i] == ")":
                 close_parenthesis += 1
             elif s[i] == "]":
