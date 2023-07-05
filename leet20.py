@@ -10,46 +10,24 @@ def isValid(s):
     close_parenthesis = False
     close_square_brackets = False
     close_curly_brackets = False
+    expected_closing = []
 
     for character in s:
-        if character == "(":  # THE OPENINGS
-            if close_parenthesis:
-                return "false"
+        # The openings
+        if character == "(":
+            expected_closing.append("parenthesis")
             open_parenthesis = True
         elif character == "[":
-            if close_square_brackets:
-                return "false"
+            expected_closing.append("square brackets")
             open_square_brackets = True
         elif character == "{":
-            if close_curly_brackets:
-                return "false"
+            expected_closing.append("curly brackets")
             open_curly_brackets = True
-        elif character == ")":  # THE CLOSINGS
+        # The closings
+        elif character == ")":
             if not open_parenthesis:
-                return "false"
-            if open_square_brackets and not close_square_brackets:
-                return "false"
-            if open_curly_brackets and not close_curly_brackets:
-                return "false"
-            close_parenthesis = True
-        elif character == "]":
-            if not open_square_brackets:
-                return "false"
-            if open_parenthesis and not close_parenthesis:
-                return "false"
-            if open_curly_brackets and not close_curly_brackets:
-                return "false"
-            close_square_brackets = True
-        elif character == "}":
-            if not open_curly_brackets:
-                return "false"
-            if open_parenthesis and not close_parenthesis:
-                return "false"
-            if open_square_brackets and not close_square_brackets:
-                return "false"
-            close_curly_brackets = True
-
-    return "true"
+                return False
+            if 
 
 
 print(isValid("()"))      # Should print "true"
