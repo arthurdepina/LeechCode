@@ -22,6 +22,7 @@ def isValid(s):
                     if (j + 1 - i) % 2 != 0:
                         continue
                     else:
+                        local_open_square = local_close_square = local_open_curly = local_close_curly = 0
                         break
                 if s[j] == "[":
                     local_open_square += 1
@@ -50,6 +51,7 @@ def isValid(s):
                     if (j + 1 - i) % 2 != 0:
                         continue
                     else:
+                        local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
                         break
                 if s[j] == "(":
                     local_open_parenthesis += 1
@@ -78,6 +80,7 @@ def isValid(s):
                     if (j + 1 - i) % 2 != 0:
                         continue
                     else:
+                        local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
                         break
                 if s[j] == "(":
                     local_open_parenthesis += 1
@@ -125,6 +128,7 @@ print(isValid("[({])}"), "-- should be False")
 print(isValid("({[)}]"), "-- should be False")
 print(isValid("(([]){})"), "---- should be True")
 print(isValid("[({(())}[()])]"), "---- should be True")
+print(isValid("[][{[{{}}[][]{{}}]}]"), "---- should be True")
 
 
 # Pensei em uma solução alternativa, para cada ( [ ou {, verifique se entre a abertura e

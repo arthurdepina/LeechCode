@@ -1,5 +1,5 @@
 class Solution(object):
-    def isValid(s):
+    def isValid(self, s):
         open_parenthesis = 0
         open_square = 0
         open_curly = 0
@@ -18,6 +18,7 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
+                            local_open_square = local_close_square = local_open_curly = local_close_curly = 0
                             break
                     if s[j] == "[":
                         local_open_square += 1
@@ -46,6 +47,7 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
+                            local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
                             break
                     if s[j] == "(":
                         local_open_parenthesis += 1
@@ -74,6 +76,7 @@ class Solution(object):
                         if (j + 1 - i) % 2 != 0:
                             continue
                         else:
+                            local_open_parenthesis = local_close_parenthesis = local_open_curly = local_close_curly = 0
                             break
                     if s[j] == "(":
                         local_open_parenthesis += 1
