@@ -134,6 +134,19 @@ print(isValid("[({(())}[()])]"), "---- should be True")
 print(isValid("[][{[{{}}[][]{{}}]}]"), "---- should be True")
 
 
-# Pensei em uma solução alternativa, para cada ( [ ou {, verifique se entre a abertura e
-# o fechamento existe um número par de itens. Não sei como ficaria o tempo de execução
-# disso, mas tanto faz.
+# That was an absolutely retarded solution.
+# There is, with 100% certainty, an easy way to do this.
+# BUT I missed the Palindromes class at uni
+# and I REFUSE to look up anything while solving these problems.
+# This was truly awful. Fuck. It's 3:39 AM. I wanna go to sleep.
+
+# ...
+
+# BUT FIRST! Let's look at the actual proper solution to this problem
+# ...
+# As I thought, you use a Stack.
+# Reading through the string, if it's an opening symbol, you append it to
+# the stack. Otherwise you compare it with the last item in the stack [-1],
+# if they are pairs, you remove it from the stack, else you return False.
+# yo yo! If the stack is empty by the time you finsh going through the string
+# you can return True! yeah!!!! so cool!!!! I'm so tired, I wanna go to sleep.
