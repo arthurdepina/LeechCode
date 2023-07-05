@@ -4,58 +4,8 @@ Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',
 
 
 def isValid(s):
-    open_parenthesis = False
-    open_square_brackets = False
-    open_curly_brackets = False
-    close_parenthesis = False
-    close_square_brackets = False
-    close_curly_brackets = False
-    expects_closing = []
-    if len(s) % 2 != 0:
-        return False
-    for character in s:
-        # The openings
-        if character == "(":
-            expects_closing.append("parenthesis")
-            open_parenthesis = True
-        elif character == "[":
-            expects_closing.append("square brackets")
-            open_square_brackets = True
-        elif character == "{":
-            expects_closing.append("curly brackets")
-            open_curly_brackets = True
-        # The closings
-        elif character == ")":
-            if not open_parenthesis:
-                return False
-            if close_square_brackets and expects_closing.index("square brackets") < expects_closing.index("parenthesis"):
-                return False
-            if close_curly_brackets and expects_closing.index("curly brackets") < expects_closing.index("parenthesis"):
-                return False
-            close_parenthesis = True
-        elif character == "]":
-            if not open_square_brackets:
-                return False
-            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("square brackets") and s.index(")") > s.index("["):
-                return False
-            if close_curly_brackets and expects_closing.index("curly brackets") < expects_closing.index("square brackets") and s.index("}") > s.index("["):
-                return False
-            close_square_brackets = True
-        elif character == "}":
-            if not open_curly_brackets:
-                return False
-            if close_parenthesis and expects_closing.index("parenthesis") < expects_closing.index("curly brackets") and s.index(")") > s.index("{"):
-                return False
-            if close_square_brackets and expects_closing.index("square brackets") < expects_closing.index("curly brackets") and s.index("]") > s.index("{"):
-                return False
-            close_curly_brackets = True
-    if open_parenthesis and not close_parenthesis:
-        return False
-    if open_square_brackets and not close_square_brackets:
-        return False
-    if open_curly_brackets and not close_curly_brackets:
-        return False
-    return True
+    if s(.index(")") - s.index("("))%2 != 0:
+
 
 
 print(isValid("()"), "-- should be TRUE")      # Should print "true"
