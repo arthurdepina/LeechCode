@@ -1,5 +1,5 @@
 class Solution(object):
-    def isValid(self, s):
+    def isValid(s):
         open_parenthesis = 0
         open_square = 0
         open_curly = 0
@@ -16,7 +16,7 @@ class Solution(object):
                 for j in range(i, len(s)):
                     if s[j] == ")":
                         if (j + 1 - i) % 2 != 0:
-                            return False
+                            continue
                         else:
                             break
                     if s[j] == "[":
@@ -44,7 +44,7 @@ class Solution(object):
                 for j in range(i, len(s)):
                     if s[j] == "]":
                         if (j + 1 - i) % 2 != 0:
-                            return False
+                            continue
                         else:
                             break
                     if s[j] == "(":
@@ -72,7 +72,7 @@ class Solution(object):
                 for j in range(i, len(s)):
                     if s[j] == "}":
                         if (j + 1 - i) % 2 != 0:
-                            return False
+                            continue
                         else:
                             break
                     if s[j] == "(":

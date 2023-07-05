@@ -20,7 +20,7 @@ def isValid(s):
             for j in range(i, len(s)):
                 if s[j] == ")":
                     if (j + 1 - i) % 2 != 0:
-                        return False
+                        continue
                     else:
                         break
                 if s[j] == "[":
@@ -48,7 +48,7 @@ def isValid(s):
             for j in range(i, len(s)):
                 if s[j] == "]":
                     if (j + 1 - i) % 2 != 0:
-                        return False
+                        continue
                     else:
                         break
                 if s[j] == "(":
@@ -76,7 +76,7 @@ def isValid(s):
             for j in range(i, len(s)):
                 if s[j] == "}":
                     if (j + 1 - i) % 2 != 0:
-                        return False
+                        continue
                     else:
                         break
                 if s[j] == "(":
@@ -123,7 +123,8 @@ print(isValid("([}}])"), "-- should be False")
 print(isValid("({[}])"), "-- should be False")
 print(isValid("[({])}"), "-- should be False")
 print(isValid("({[)}]"), "-- should be False")
-print(isValid("(([]){})"), "-- should be True")
+print(isValid("(([]){})"), "---- should be True")
+print(isValid("[({(())}[()])]"), "---- should be True")
 
 
 # Pensei em uma solução alternativa, para cada ( [ ou {, verifique se entre a abertura e
