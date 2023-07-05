@@ -64,7 +64,7 @@ print(isValid("(]"), "-- should be FALSE")     # Should print "false"
 print(isValid("([)]"), "-- should be FALSE")    # Should print "false"
 print(isValid("{[]}"), "-- should be TRUE")    # Should print "true"
 print(isValid("[()]"), "-- should be TRUE")    # Should print "true"
-print(isValid("(("), "-- should be False")
+print(isValid("(("), "-- should be FALSE")
 
 
 # Pensei em uma solução alternativa, para cada ( [ ou {, verifique se entre a abertura e
