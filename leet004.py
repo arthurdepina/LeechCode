@@ -1,10 +1,10 @@
 def findMedianSortedArrays (nums1, nums2):
     nums = sorted(nums1 + nums2)
+    mid = len(nums)//2
     if len(nums)%2 == 0:
-        print((nums[len(nums)//2] + nums[len(nums)//2 - 1])/2)
-        return (nums[len(nums)//2] + nums[len(nums)//2 - 1])/2
+        return (nums[mid] + nums[mid - 1])/2
     else:
-        return nums[len(nums)//2]
+        return nums[mid]
 
 
 # resultado_a = findMedianSortedArrays([1, 3], [2])
