@@ -1,7 +1,7 @@
 001 - 82.52%    [Easy]
 002 - 88.6%     [Medium]  [redo]
 004 - 65.57%    [Hard]
-009 - 5%        [Easy]
+009 - 95.29%    [Easy]
 013 - 16.46%    [Easy]
 014 - 10.5%     [Easy]
 020 - 5.39%     [Easy]    [Redo]  <-- This is the worst code I've ever written in my life

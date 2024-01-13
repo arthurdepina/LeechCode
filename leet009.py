@@ -1,7 +1,8 @@
 # 09. Palindrome Number
 
 def isPalindrome(x) -> bool:
-    if x < 0 or x % 10 == 0: return False
+    if x < 0 or (x != 0 and x % 10 == 0):
+        return False
     backwards = 0
     while x > backwards:
         backwards = backwards * 10 + x % 10
