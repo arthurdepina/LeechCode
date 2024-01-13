@@ -1,3 +1,5 @@
+# 13. Roman to Integer
+
 def romanToInt(s):
     x = 0
     rti = {
@@ -9,15 +11,11 @@ def romanToInt(s):
         "D": 500,
         "M": 1000
     }
-    s = list(s)
     for i in range(len(s)):
-        if i == len(s) - 1:
-            x += rti[s[i]]
+        if i < len(s) - 1 and rti[s[i]] < rti[s[i + 1]]:
+            x -= rti[s[i]]
         else:
-            if rti[s[i]] < rti[s[i + 1]]:
-                x -= rti[s[i]]
-            else:
-                x += rti[s[i]]
+            x += rti[s[i]]
     return x
 
 
