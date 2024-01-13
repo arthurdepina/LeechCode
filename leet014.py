@@ -1,7 +1,4 @@
-"""
-Write a function to find the longest common prefix string amongst an array of strings.
-If there's no common prefix, return an empty string ""
-"""
+# 014 Longest Common Prefix
 
 
 def longestCommonPrefix(strs):

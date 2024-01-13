@@ -1,4 +1,4 @@
-# 01. Two Sum
+# 001. Two Sum
 
 def twoSum(nums, target):
     dictionary = dict()
