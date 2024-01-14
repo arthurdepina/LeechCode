@@ -2,24 +2,15 @@
 
 
 def longestCommonPrefix(strs):
-    # Encontrando a menor palavra
-    smallest = strs[0]
-    for word in strs:
-        if len(word) < len(smallest):
-            smallest = word
-
-    found = ""
-
-    for i in smallest:
-        for s in strs:
-            if smallest in s[:len(smallest)] and len(smallest) > len(found):
-                found = smallest
-            elif smallest not in s[:len(smallest)]:
-                found = ""
-                break
-        smallest = smallest[:-1]
-
-    return found
+    strs = sorted(strs)
+    answer = ""
+    first = strs[0]
+    last = strs[-1]
+    for i in range(min(len(first), len(last))):
+        if first[i] != last[i]:
+            return answer
+        answer += first[i]
+    return answer
 
 
 print(longestCommonPrefix(["flower", "flow", "flight"]))
