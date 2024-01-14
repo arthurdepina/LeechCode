@@ -16,20 +16,5 @@ def isValid(s):
             if i == "}" and pseudo_stack[-1] == "{": pseudo_stack.pop()
     return not pseudo_stack
 
-print(isValid("()"), "---- should be TRUE")    
-print(isValid("()[]{}"), "---- should be TRUE")
-print(isValid("(]"), "-- should be FALSE")     
-print(isValid("([)]"), "-- should be FALSE")   
-print(isValid("{[]}"), "---- should be TRUE")  
-print(isValid("[()]"), "---- should be TRUE")  
-print(isValid("(("), "-- should be FALSE")     
-print(isValid("(){}}{"), "-- should be FALSE") 
-print(isValid("[[[]"), "-- should be FALSE")
-print(isValid("([}}])"), "-- should be FALSE")
-print(isValid("({[}])"), "-- should be FALSE")
-print(isValid("[({])}"), "-- should be FALSE")
-print(isValid("({[)}]"), "-- should be FALSE")
-print(isValid("(([]){})"), "---- should be TRUE")
-print(isValid("[({(())}[()])]"), "---- should be TRUE")
+
 print(isValid("[][{[{{}}[][]{{}}]}]"), "---- should be TRUE")
-print(isValid("]"), "-- should be FALSE")
