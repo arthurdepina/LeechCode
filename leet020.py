@@ -17,4 +17,4 @@ def isValid(s):
     return not pseudo_stack
 
 
-print(isValid("[][{[{{}}[][]{{}}]}]"), "---- should be TRUE")
+print(isValid("[][{[{{}}[][]{{}}]}]"))
