@@ -1,12 +1,8 @@
 # 217. Contains Duplicate
 
 def containsDuplicate(nums) -> bool:
-    contains = list()
-    for i in nums:
-        if i in contains:   
-            return True
-        contains.append(i)
-    return False
+    mylist = list(dict.fromkeys(nums))
+    return mylist != nums
 
 
 # print(containsDuplicate([1,2,3,1]))
