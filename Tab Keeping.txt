@@ -9,3 +9,8 @@
 026 - 53.78%    [Easy]
 118 - 40.02%    [Easy]    [Redo]
 217 - 96.42%    [Easy]    [Redo with Hash]
+
+
+Easy   counter: 9
+Medium counter: 1
+Hard   counter: 2
