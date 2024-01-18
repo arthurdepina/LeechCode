@@ -1,7 +1,7 @@
 # 217. Contains Duplicate
 
 def containsDuplicate(nums) -> bool:
-    return list(dict.fromkeys(nums)) != nums
+    return len(nums) == len(set(nums))
 
 
 print(containsDuplicate([1,2,3,1]))

@@ -1,15 +1,15 @@
-001 - 98.42%    [Easy]
-002 - 88.6%     [Medium]  [redo]
-004 - 65.57%    [Hard]
-009 - 95.29%    [Easy]
-013 - 98.99%    [Easy]
-014 - 87.07%    [Easy]
-020 - 94.19%    [Easy]
-021 - 28.54%    [Easy]
-026 - 53.78%    [Easy]
-118 - 40.02%    [Easy]    [Redo]
-217 - 96.42%    [Easy]    [Redo with Hash]
-
+001  - 98.42%       [Easy]
+002  - 88.60%       [Medium]    [redo]
+004  - 65.57%       [Hard]
+009  - 95.29%       [Easy]
+013  - 98.99%       [Easy]
+014  - 87.07%       [Easy]
+020  - 94.19%       [Easy]
+021  - 28.54%       [Easy]      [redo]
+026  - 53.78%       [Easy]
+118  - 40.02%       [Easy]      [Redo]
+217  - 97.37%       [Easy]      [Redo with Hash]
+1207 - 75.66%       [Easy]
 
 Easy   counter: 9
 Medium counter: 1
