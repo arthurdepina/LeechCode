@@ -5,8 +5,7 @@ def uniqueOccurrences(arr) -> bool:
     for i in arr:
         if i in occurrences: occurrences[i] += 1
         else: occurrences[i] = 1
-    occ = list(occurrences.values())
-    return len(set(occ)) == len(occ) 
+    return len(set(occurrences.values())) == len(occurrences) 
 
 
 print(uniqueOccurrences([1,2,2,1,1,3])) # true
