@@ -2,8 +2,10 @@
 
 
 def searchInsert(nums, target) -> int:
+
     start = 0
     ending = len(nums)
+
     while True:
 
         if nums[ending - 1] < target: return ending
@@ -12,9 +14,8 @@ def searchInsert(nums, target) -> int:
         i_current = (start + ending)//2
 
         if nums[i_current] == target: return i_current
-        else:
-            if nums[i_current] > target: ending = i_current
-            else: start = i_current
+        if nums[i_current] > target: ending = i_current - 1
+        else: start = i_current + 1
 
 
-print(searchInsert([1, 3, 5, 6], 2))
+print(searchInsert([1, 3, 5, 6], 7))
