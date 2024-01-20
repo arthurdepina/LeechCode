@@ -4,11 +4,10 @@
 def searchInsert(nums, target) -> int:
 
     start = 0
-    ending = len(nums)
+    ending = len(nums) - 1
 
     while start <= ending:
         i_current = (start + ending)//2
-
         if nums[i_current] == target: return i_current
         if nums[i_current] > target: ending = i_current - 1
         else: start = i_current + 1
