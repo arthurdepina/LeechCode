@@ -1,28 +1,37 @@
 # 931. Minimum Falling Path Sum
 
 def minFallingPathSum(matrix) -> int:
-    max_depth = len(matrix)
-    smallest_for_i = [999999] * max_depth
-    initial_i = 0
+    N = len(matrix) # dimensions of the matrix
+    cache = dict()
 
-    def min_path(matrix, current_path, smallest_for_i, i, depth, initial_i):
-        if depth == max_depth:
-            if current_path < smallest_for_i[initial_i]:
-                smallest_for_i[initial_i] = current_path
-            return
+    def depth_first_search(row, column):
+        if row == N: return 0
+        if column == -1 or column == N: return float('inf')
 
-        current_path += matrix[depth][i]
-        min_width = i - 1 if i > 0 else 0
-        max_width = i + 1 if i < max_depth - 1 else max_depth - 1
+        if (row, column) in cache: return cache[(row, column)]
 
-        for i in range(min_width, max_width + 1):
-            min_path(matrix, current_path, smallest_for_i, i, depth + 1, initial_i)
+        min_path = matrix[row][column] + min(depth_first_search(row + 1, column + 1),
+                                             depth_first_search(row + 1, column),
+                                             depth_first_search(row + 1, column - 1)
+                                             )
+        
+        cache[(row, column)] = min_path
+
+        return min_path
+        
     
-    for initial_i in range(max_depth):
-        min_path(matrix, 0, smallest_for_i, initial_i, 0, initial_i)
-    
-    return min(smallest_for_i)
+    min_path = float('inf') # the result we're trying to minimize
+    for column in range(N): # iterating through the first row
+        min_path = min(min_path, depth_first_search(0, column))
+
+    return min_path
 
 
 print(minFallingPathSum([[2,1,3],[6,5,4],[7,8,9]])) # 13
 print(minFallingPathSum([[-19,57],[-40,-5]]))       # -59
+
+
+# This solution works fine (still fairly slow)
+# but I'm not sure how I would've come up with it
+# by myself. This solution comes from neetcode:
+# https://youtu.be/b_F3mz9l-uQ?si=EK5wbkxm_q6slviQ
