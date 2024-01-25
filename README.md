@@ -1,2 +1,2 @@
 # LeechCode
- I'm on my LeetCode grind
+ Algorithms and Data Structures are fun.
