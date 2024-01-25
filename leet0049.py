@@ -6,10 +6,8 @@ def groupAnagrams(strs: list[str]) -> list[list[str]]:
     anagrams = defaultdict(list)
 
     for word in strs:
-        count = [0] * 26
-        for letter in word:
-            count[ord(letter) - ord('a')] += 1
-        anagrams[tuple(count)].append(word)
+        s_word = ''.join(sorted(word))
+        anagrams[s_word].append(word)
     
     return anagrams.values()
 
