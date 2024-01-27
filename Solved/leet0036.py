@@ -25,8 +25,6 @@ def isValidSudoku(board: list[list[str]]) -> bool:
     return True
 
 
-
-
 print(isValidSudoku([["5","3",".",".","7",".",".",".","."],
                      ["6",".",".","1","9","5",".",".","."],
                      [".","9","8",".",".",".",".","6","."],
