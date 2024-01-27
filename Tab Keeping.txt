@@ -16,6 +16,7 @@
 058  - 95.47%       [Easy]      03min
 066  - 98.55%       [Easy]      26min
 118  - 40.02%       [Easy]      [Redo]
+128  - ======       [Medium]    * LC timer makes no sense.
 217  - 97.37%       [Easy]      [Redo with Hash]
 238  - 95.06%       [Medium]
 242  - 96.19%       [Easy]
