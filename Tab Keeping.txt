@@ -16,6 +16,7 @@
 049  - 97.07%       [Medium]
 058  - 95.47%       [Easy]      03min
 066  - 98.55%       [Easy]      26min
+067  - 85.24%       [Easy]
 118  - 40.02%       [Easy]      [Redo]
 128  - ======       [Medium]    * LC timer makes no sense.
 167  - 99.85%       [Medium]
