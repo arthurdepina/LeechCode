@@ -21,4 +21,4 @@ def mergeTwoLists(list1, list2):
     
     tail.next = list1 if list1 else list2
 
-    return dummy.next # Por que retornar dummy e não tail?
+    return dummy.next
