@@ -8,20 +8,19 @@ def maxProfit(prices: list[int]) -> int:
     right  = 1 # sell
     profit = 0
     
-    while right < len(prices) and left <= len(prices) - 1:
+    while right < len(prices):
         buy    = prices[left]
         sell   = prices[right]
-        profit = max(profit, sell - buy)
-        
+                
         if sell < buy:
             left = right
-            right += 1
         else:
-            right += 1
+            profit = max(profit, sell - buy)
+        
+        right += 1
 
     return profit       
         
-
 
 print(maxProfit([7,1,5,3,6,4])) # 5
 print(maxProfit([7,6,4,3,1]))   # 0
