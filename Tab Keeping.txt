@@ -29,9 +29,10 @@
 238  - 95.06%       [Medium]
 242  - 96.19%       [Easy]
 347  - 92.74%       [Medium]
+704  - 89.51%       [Easy]
 931  - 97.59%       [Medium]
 1207 - 95.23%       [Easy]
 
-Easy   counter: 20
+Easy   counter: 21
 Medium counter: 12
 Hard   counter: 01
